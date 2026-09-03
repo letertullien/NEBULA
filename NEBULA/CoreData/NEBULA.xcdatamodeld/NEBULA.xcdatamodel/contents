@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24902" systemVersion="25F80" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="FicheEntity" representedClassName="FicheEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCreation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lieu" optional="YES" attributeType="String"/>
+        <attribute name="meteo" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="objetCeleste" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ObjetCelesteEntity" inverseName="lesFiches" inverseEntity="ObjetCelesteEntity"/>
+    </entity>
+    <entity name="ObjetCelesteEntity" representedClassName="ObjetCelesteEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="centreObservation" optional="YES" attributeType="String"/>
+        <attribute name="descriptionTexte" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="nomImage" optional="YES" attributeType="String"/>
+        <attribute name="titre" optional="YES" attributeType="String"/>
+        <relationship name="lesFiches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FicheEntity" inverseName="objetCeleste" inverseEntity="FicheEntity"/>
+    </entity>
+</model>
